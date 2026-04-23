@@ -1,0 +1,170 @@
+{
+  "meta": {
+    "name": "Alffrin Regi",
+    "role": "Robotics Engineer",
+    "tagline": "Cyber-Physical Systems · Embedded AI · Autonomous Systems",
+    "focus": "Cyber-Physical Systems",
+    "description": "I am a Robotics Engineer focused on building intelligent robotic systems that combine advanced sensing, embedded AI, power electronics, and real-time control. I work across the full stack of robotics — integrating mechanical design, electronics, and intelligent software to create autonomous systems capable of operating in complex real-world environments.",
+    "email": "alffrin10@gmail.com",
+    "phone": "+91 9594937829",
+    "linkedin": "https://linkedin.com/in/alffrin-regi",
+    "github": "",
+    "location": "Kerala, India",
+    "resumeUrl": "/assets/resume.pdf",
+    "availabilityStatus": "Open to Opportunities",
+    "availabilityTags": ["Robotics", "CPS", "Embedded AI", "Autonomous Systems"]
+  },
+  "education": {
+    "university": "Lovely Professional University",
+    "degree": "B.Tech",
+    "field": "Robotics and Automation",
+    "location": "Punjab, India"
+  },
+  "neofetch": {
+    "user": "alffrin",
+    "host": "robotics",
+    "rows": [
+      { "key": "name    ", "value": "Alffrin Regi",          "colorClass": "" },
+      { "key": "role    ", "value": "Robotics Engineer",      "colorClass": "p" },
+      { "key": "focus   ", "value": "Cyber-Physical Systems", "colorClass": "t" },
+      { "key": "stack   ", "value": "ROS 2 · C++ · Python",   "colorClass": "" },
+      { "key": "hardware", "value": "Jetson · RPi · STM32",   "colorClass": "" },
+      { "key": "domain  ", "value": "Autonomous Systems",      "colorClass": "b" },
+      { "key": "projects", "value": "4 deployed",              "colorClass": "g" },
+      { "key": "edu     ", "value": "LPU · B.Tech Robotics",  "colorClass": "" },
+      { "key": "base    ", "value": "Kerala, India",           "colorClass": "" }
+    ]
+  },
+  "skills": [
+    { "group": "robotics_frameworks", "items": ["ROS 2", "Nav2 / MoveIt", "Gazebo"] },
+    { "group": "languages",           "items": ["C++", "Python", "Bash"] },
+    { "group": "embedded_ai",         "items": ["Jetson Nano", "STM32", "TensorRT / YOLO"] },
+    { "group": "hardware_&_sensing",  "items": ["PCB Design", "Sensor Fusion", "Computer Vision"] }
+  ],
+  "skillsGraph": {
+    "center": {
+      "id": "ros2", "label": "ROS2", "category": "middleware",
+      "description": "Robot Operating System 2 — core robotics middleware"
+    },
+    "nodes": [
+      { "id": "nav2",      "label": "Nav2",            "category": "middleware",   "description": "Navigation stack for autonomous mobile robots" },
+      { "id": "moveit2",   "label": "MoveIt2",         "category": "middleware",   "description": "Motion planning framework for robot arms" },
+      { "id": "gazebo",    "label": "Gazebo",          "category": "simulation",   "description": "High-fidelity robot simulation environment" },
+      { "id": "webots",    "label": "Webots",          "category": "simulation",   "description": "Open-source robot simulator by Cyberbotics" },
+      { "id": "dds",       "label": "DDS",             "category": "middleware",   "description": "Data Distribution Service — ROS2 transport layer" },
+      { "id": "cpp",       "label": "C++",             "category": "programming",  "description": "High-performance systems programming language" },
+      { "id": "python",    "label": "Python",          "category": "programming",  "description": "Rapid prototyping and ML integration" },
+      { "id": "slam",      "label": "SLAM",            "category": "middleware",   "description": "Simultaneous Localization and Mapping" },
+      { "id": "fusion",    "label": "Sensor Fusion",   "category": "middleware",   "description": "Multi-sensor data integration for robust perception" },
+      { "id": "cv",        "label": "Computer Vision", "category": "programming",  "description": "Image processing and visual perception pipelines" },
+      { "id": "embedded",  "label": "Embedded Sys",   "category": "hardware",     "description": "Real-time firmware and bare-metal programming" },
+      { "id": "pcb",       "label": "PCB Design",      "category": "hardware",     "description": "Custom PCB layout for robotics electronics" },
+      { "id": "jetson",    "label": "Jetson",          "category": "hardware",     "description": "NVIDIA Jetson edge AI computing platform" },
+      { "id": "stm32",     "label": "STM32",           "category": "hardware",     "description": "ARM Cortex-M microcontrollers for real-time control" }
+    ],
+    "edges": [
+      ["ros2","nav2"], ["ros2","moveit2"], ["ros2","dds"], ["ros2","slam"],
+      ["ros2","cpp"], ["ros2","python"], ["ros2","gazebo"],
+      ["nav2","slam"], ["nav2","fusion"], ["moveit2","cpp"],
+      ["slam","fusion"], ["slam","cv"], ["fusion","cv"],
+      ["cpp","embedded"], ["cpp","stm32"], ["python","cv"],
+      ["embedded","pcb"], ["embedded","stm32"], ["embedded","jetson"],
+      ["jetson","cv"], ["jetson","python"], ["gazebo","webots"]
+    ]
+  },
+  "experience": [
+    {
+      "company": "Zaalima Development",
+      "role": "Robotics and Embedded System Intern",
+      "date": "Mar 2024 – Jun 2024",
+      "location": "Bangalore, India"
+    },
+    {
+      "company": "Renovation Tech Robotics Aeromodelling",
+      "role": "Technical Head",
+      "date": "Sep 2023 – Nov 2025",
+      "location": "Punjab, India"
+    },
+    {
+      "company": "Robotics and Intelligent System Community",
+      "role": "Technical Member",
+      "date": "Sep 2023 – Nov 2025",
+      "location": "Punjab, India"
+    }
+  ],
+  "projects": [
+    {
+      "icon": "🚁",
+      "thumb": "radar",
+      "name": "Disaster Response Drone",
+      "tags": ["Autonomous UAV", "Jetson Nano", "YOLO", "Computer Vision"],
+      "bullets": [
+        "Developed an autonomous drone capable of human detection using Jetson Nano and optimized YOLO model for real-time edge inference in disaster environments",
+        "Integrated onboard vision processing and sensor fusion for stability and robust field deployment under degraded conditions",
+        "Designed the platform for disaster scenarios focusing on endurance, efficient hardware, and enhanced decision-making algorithms"
+      ],
+      "caseStudy": {
+        "problem": "Search-and-rescue teams face dangerous, time-critical environments where manual drone operation is slow and error-prone. Existing UAVs lacked onboard intelligence for autonomous human detection without cloud dependency.",
+        "approach": "Deployed a fine-tuned YOLOv5 model directly on a Jetson Nano with TensorRT optimization, achieving 12 FPS inference at the edge. Fused IMU + barometer + optical flow for stable hover in GPS-degraded environments.",
+        "result": "Achieved reliable human detection at 15m altitude with <200ms latency. Successfully tested in simulated rubble environments. Reduced operator workload by ~70% in trials.",
+        "lessons": "Edge inference optimization is as important as model accuracy. TensorRT INT8 quantization was the key to real-time performance on constrained hardware."
+      }
+    },
+    {
+      "icon": "📡",
+      "thumb": "gpr",
+      "name": "Landmine Detection Rover",
+      "tags": ["RF / GPR", "MATLAB", "ROS2", "Hardware"],
+      "bullets": [
+        "Developed a ground robot equipped with a custom GPR sensing pipeline for subsurface anomaly detection in hazardous terrain",
+        "Designed the full RF chain including LNA, couplers, attenuators, and signal conditioning hardware for mid-frequency Ground Penetrating Radar",
+        "Built a processing workflow using MATLAB and GPRPy to visualize underground signatures and support real-time field interpretation"
+      ],
+      "caseStudy": {
+        "problem": "Landmine clearance in post-conflict zones is slow and lethal for human demarkers. Existing detection equipment is expensive and non-autonomous.",
+        "approach": "Designed a custom 500MHz–1GHz GPR RF chain from first principles: LNA, directional couplers, bandpass filters, and a software-defined receiver. Mounted on a ROS2-controlled differential-drive rover with GPS logging.",
+        "result": "Detected buried metallic and non-metallic targets at depths up to 30cm in sandy soil. Full system cost ~8× less than commercial equivalents.",
+        "lessons": "Signal conditioning hardware quality dominates GPR performance more than algorithm choice. Shielding and antenna separation are critical to SNR."
+      }
+    },
+    {
+      "icon": "🔐",
+      "thumb": "neural",
+      "name": "Cybersecurity LLM with Whisper Interface",
+      "tags": ["LLM Fine-tuning", "NLP", "Python", "AI/ML"],
+      "bullets": [
+        "Fine-tuned a lightweight LLM specializing in cybersecurity threat detection and analysis with automated response workflows for incident handling",
+        "Integrated Whisper for speech-based interaction, enabling voice-driven log queries on secure systems",
+        "Optimized for low-latency inference and secure on-device processing of sensitive data"
+      ],
+      "caseStudy": {
+        "problem": "Security analysts spend hours parsing verbose system logs during incidents. Existing LLMs are too large for air-gapped secure environments and not specialized for cybersecurity.",
+        "approach": "Fine-tuned a 7B parameter model on a curated cybersecurity corpus (CVE descriptions, attack patterns, log formats). Integrated OpenAI Whisper for hands-free voice queries. Quantized to 4-bit for deployment on a local workstation.",
+        "result": "Reduced log triage time by ~60% in internal testing. Voice query latency <2s on CPU-only hardware. Model fit entirely within 8GB VRAM.",
+        "lessons": "Domain-specific fine-tuning on a small model outperforms general-purpose large models for structured security tasks. Data curation quality trumps dataset size."
+      }
+    },
+    {
+      "icon": "🦾",
+      "thumb": "hex",
+      "name": "Vision-Enabled Quadruped Robot",
+      "tags": ["Computer Vision", "Raspberry Pi", "ROS2", "Embedded"],
+      "bullets": [
+        "Built a quadruped robot capable of perception-based navigation using onboard computer vision and real-time inference for dynamic environments",
+        "Implemented multi-sensor fusion for environmental understanding and adaptive terrain locomotion"
+      ],
+      "caseStudy": {
+        "problem": "Legged robots in research labs often rely on expensive centralized compute and structured environments. Real-world deployment demands low-cost, adaptive locomotion with onboard perception.",
+        "approach": "Built a 12-DOF quadruped from scratch using 3D-printed structure and custom servo driver boards. Ran a simplified CPG-based gait controller on STM32, with ROS2 on Raspberry Pi 4 handling perception and high-level navigation.",
+        "result": "Successfully navigated unstructured terrain including gravel and low steps. Gait stability maintained up to 8° tilt. Full BOM under $400.",
+        "lessons": "Mechanical compliance matters as much as software control. Soft-mounting servos dramatically improved stability on rough terrain without any algorithm changes."
+      }
+    }
+  ],
+  "currentlyBuilding": [
+    "// TODO: Add your current projects here",
+    "// Example: 'Sim-to-real locomotion with Isaac Lab + PPO'",
+    "// Example: 'Spherical robotic wrist (Rosheim mechanism)'",
+    "// Example: \"God's Eye — distributed recon AI agent\""
+  ]
+}

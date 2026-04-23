@@ -1,0 +1,195 @@
+/* ═══════════════════════════════════════════
+   ANIMATIONS — Keyframes & scroll reveals
+═══════════════════════════════════════════ */
+
+/* Scroll fade-in variants */
+.fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .62s ease, transform .62s ease, filter .62s ease;
+  filter: blur(4px);
+}
+.fade.in {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+.fadeL {
+  opacity: 0;
+  transform: translateX(-28px);
+  transition: opacity .62s ease, transform .62s ease, filter .62s ease;
+  filter: blur(4px);
+}
+.fadeL.in {
+  opacity: 1;
+  transform: translateX(0);
+  filter: blur(0);
+}
+
+.fadeR {
+  opacity: 0;
+  transform: translateX(28px);
+  transition: opacity .62s ease, transform .62s ease, filter .62s ease;
+  filter: blur(4px);
+}
+.fadeR.in {
+  opacity: 1;
+  transform: translateX(0);
+  filter: blur(0);
+}
+
+/* Pulse (live dot, status indicators) */
+@keyframes pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 10px var(--green); }
+  50% { opacity: .35; box-shadow: 0 0 4px var(--green); }
+}
+
+/* Cursor blink */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Section header glitch effects */
+@keyframes glitch-h {
+  0%, 100% { text-shadow: none; transform: none; }
+  20% { text-shadow: 2px 0 var(--sap), -2px 0 var(--peach); transform: skewX(.8deg); }
+  21% { text-shadow: none; transform: none; }
+  65% { text-shadow: none; }
+  66% { text-shadow: -3px 0 var(--mauve), 1px 0 var(--teal); transform: skewX(-.5deg); }
+  67% { text-shadow: none; transform: none; }
+}
+@keyframes glitch-n {
+  0%, 100% { letter-spacing: 4px; color: var(--mauve); }
+  25% { letter-spacing: 7px; color: var(--peach); }
+  26% { letter-spacing: 3px; }
+  27% { letter-spacing: 4px; }
+}
+
+/* Cursor particle */
+.gp {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9995;
+  border-radius: 50%;
+  animation: gf .65s ease-out forwards;
+}
+@keyframes gf {
+  0% { opacity: .85; transform: scale(1); }
+  100% { opacity: 0; transform: scale(.1) translateY(-7px); }
+}
+
+/* ═══════════════════════════════════════════
+   SHOOTING STARS — Pure CSS (Void theme only)
+   Adapted from Star_theme.css
+═══════════════════════════════════════════ */
+.shooting-stars-container {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.shooting-star {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 4px rgba(255,255,255,.1),
+    0 0 0 8px rgba(255,255,255,.1),
+    0 0 20px rgba(255,255,255,.1);
+  animation: shootingStar 3s linear infinite;
+}
+
+.shooting-star::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 300px;
+  height: 1px;
+  background: linear-gradient(90deg, #fff, transparent);
+}
+
+@keyframes shootingStar {
+  0% {
+    transform: rotate(315deg) translateX(0);
+    opacity: 1;
+  }
+  70% { opacity: 1; }
+  100% {
+    transform: rotate(315deg) translateX(-1000px);
+    opacity: 0;
+  }
+}
+
+.shooting-star:nth-child(1)  { top: 0;     right: 0;      left: initial; animation-delay: 0s;     animation-duration: 3s; }
+.shooting-star:nth-child(2)  { top: 0;     right: 80px;   left: initial; animation-delay: .6s;    animation-duration: 7s; }
+.shooting-star:nth-child(3)  { top: 80px;  right: 0;      left: initial; animation-delay: 1.2s;   animation-duration: 5s; }
+.shooting-star:nth-child(4)  { top: 0;     right: 180px;  left: initial; animation-delay: 1.8s;   animation-duration: 4.5s; }
+.shooting-star:nth-child(5)  { top: 0;     right: 400px;  left: initial; animation-delay: 2.4s;   animation-duration: 6s; }
+.shooting-star:nth-child(6)  { top: 0;     right: 600px;  left: initial; animation-delay: 3s;     animation-duration: 7s; }
+.shooting-star:nth-child(7)  { top: 300px; right: 0;      left: initial; animation-delay: 3.6s;   animation-duration: 5s; }
+.shooting-star:nth-child(8)  { top: 0;     right: 700px;  left: initial; animation-delay: 4.2s;   animation-duration: 3.5s; }
+.shooting-star:nth-child(9)  { top: 0;     right: 1000px; left: initial; animation-delay: 2.1s;   animation-duration: 6s; }
+.shooting-star:nth-child(10) { top: 0;     right: 450px;  left: initial; animation-delay: 5s;     animation-duration: 6.5s; }
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════ */
+@media (max-width: 1020px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto auto;
+    gap: 38px;
+    min-height: auto !important;
+    padding-top: 44px;
+  }
+  .nf { max-width: 460px; margin: 0 auto; }
+  .about-grid { grid-template-columns: 1fr !important; }
+  .about-aside { flex-direction: row; }
+}
+@media (max-width: 760px) {
+  .contact-grid { grid-template-columns: 1fr !important; }
+  .contact-bot  { grid-template-columns: 1fr !important; }
+  .skills-body  { grid-template-columns: 1fr !important; }
+  .about-aside  { flex-direction: column; }
+  .hero-name    { font-size: clamp(38px, 8vw, 60px) !important; }
+}
+@media (max-width: 600px) {
+  .project-card { flex-direction: column !important; }
+  .project-thumb {
+    width: 100% !important;
+    min-height: 96px;
+    border-right: none !important;
+    border-bottom: 1px solid var(--border);
+  }
+  .wbar { padding: 0 13px !important; }
+  .wrap { padding: 70px 16px 44px; }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .shooting-star { display: none; }
+  .fade, .fadeL, .fadeR {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
+
+/* Hide custom cursor on touch devices */
+@media (pointer: coarse) {
+  .cursor-dot, .cursor-ring { display: none !important; }
+}

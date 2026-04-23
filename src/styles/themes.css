@@ -1,0 +1,206 @@
+/* ══════════════════════════════════════════════════
+   VOID — Minimalist black/white/gray
+   Default theme. Clean, sparse, monochrome.
+══════════════════════════════════════════════════ */
+:root {
+  --bg: #000;
+  --bg2: #050505;
+  --bg3: #0a0a0a;
+  --card-bg: rgba(255,255,255,.03);
+  --card-hover: rgba(255,255,255,.06);
+  --border: rgba(255,255,255,.07);
+  --border-h: rgba(255,255,255,.2);
+  --text: #f5f5f5;
+  --sub1: #b0b0b0;
+  --sub0: #7a7a7a;
+  --ov1: #555;
+  --ov0: #3a3a3a;
+  --sf2: #252525;
+  --sf1: #181818;
+  --sf0: #111;
+  --mauve: #fff;
+  --lav: #e0e0e0;
+  --blue: #c0c0c0;
+  --sap: #a8a8a8;
+  --teal: #909090;
+  --sky: #787878;
+  --peach: #c8c0b8;
+  --green: #46b946;
+  --yel: #c8c09a;
+  --pink: #c0b8c0;
+  --mar: #b0a8b0;
+  --red: #c8a0a0;
+  --crust: #000;
+  --mantle: #030303;
+  --base: #060606;
+  --glow: rgba(255,255,255,.12);
+  --glow-sm: rgba(255,255,255,.05);
+  --nav-bg: rgba(0,0,0,.92);
+  --nav-border: rgba(255,255,255,.08);
+  --section-line: linear-gradient(90deg, var(--border-h), transparent);
+  --name-gradient: linear-gradient(130deg, #e8e8e8 0%, #a0a0a0 100%);
+}
+
+/* ── VOID VANTABLACK & CLEANUP ── */
+[data-theme="void"] .noise-overlay,
+[data-theme="void"] .scan-overlay,
+[data-theme="void"] .vignette-overlay,
+[data-theme="void"] .void-scroll-cue,
+[data-theme="void"] .scroll-progress-v {
+  display: none;
+}
+
+[data-theme="void"] body,
+[data-theme="void"] #root {
+  background: #000000;
+  background-image: none;
+}
+
+[data-theme="void"] .tech-grid {
+  grid-template-columns: repeat(4, 1fr);
+  overflow-x: auto;
+}
+
+/* ══════════════════════════════════════════════════
+   LUMINUS — Catppuccin Mocha (Rich purple palette)
+   Canvas backgrounds, colorful glows, vibrant.
+   HYPR 1: Background brightness raised.
+══════════════════════════════════════════════════ */
+[data-theme="luminus"] {
+  --bg-primary: #c7c6c5;
+  --bg-secondary: #bfbeb8;
+  --bg-tertiary: #b8b7b1;
+  --bg-card: rgba(255, 255, 255, 0.65);
+  --bg: #c7c6c5;
+  --bg2: #c7c6c5;
+  --bg3: #c7c6c5;
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.8);
+  --card-bg: rgba(255, 255, 255, 0.65);
+  --card-hover: rgba(255, 255, 255, 0.85);
+  --border: rgba(0, 0, 0, 0.08);
+  --border-h: rgba(0, 0, 0, 0.15);
+  --text: #050505;
+  --sub1: #1a1a1a;
+  --sub0: #333333;
+  --ov1: #4d4d4d;
+  --ov0: #666666;
+  --sf2: #ffffff;
+  --sf1: #f8f8f8;
+  --sf0: #f0f0f0;
+  --mauve: #000000;
+  --lav: #333333;
+  --blue: #000000;
+  --sap: #000000;
+  --teal: #000000;
+  --sky: #333333;
+  --green: #000000;
+  --peach: #555555;
+  --yel: #000000;
+  --pink: #333333;
+  --mar: #111111;
+  --red: #000000;
+  --crust: #d5d3ce;
+  --mantle: #dcdad5;
+  --base: #e2e0dc;
+  --glow: rgba(0, 0, 0, 0.03);
+  --glow-sm: rgba(0, 0, 0, 0.01);
+  --nav-bg: rgba(213, 211, 206, 0.8);
+  --nav-border: rgba(255, 255, 255, 0.5);
+  --section-line: rgba(0, 0, 0, 0.1);
+  --name-gradient: #1a1a1a;
+}
+
+[data-theme="luminus"] *, [data-theme="luminus"] *::before, [data-theme="luminus"] *::after {
+  transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out, border-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out, backdrop-filter 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
+}
+
+/* ── 1. GLOBAL BACKGROUND ── */
+[data-theme="luminus"] body,
+[data-theme="luminus"] #root {
+  background: var(--bg);
+  background-image: none;
+}
+
+[data-theme="luminus"] body::after,
+[data-theme="luminus"] #root::after,
+[data-theme="luminus"] .vignette-overlay,
+[data-theme="luminus"] .scan-overlay,
+[data-theme="luminus"] .bg-canvas {
+  display: none;
+  background: none;
+  box-shadow: none;
+}
+
+/* ── 2. BOXLESS MINIMALISM (Blended Text) ── */
+[data-theme="luminus"] .wbar,
+[data-theme="luminus"] .card,
+[data-theme="luminus"] .mc,
+[data-theme="luminus"] .sg,
+[data-theme="luminus"] .exp-item,
+[data-theme="luminus"] .project-card,
+[data-theme="luminus"] .modal,
+[data-theme="luminus"] .nf,
+[data-theme="luminus"] .cbox,
+[data-theme="luminus"] .lcard,
+[data-theme="luminus"] .scard {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0;
+}
+
+[data-theme="luminus"] .card:hover,
+[data-theme="luminus"] .mc:hover,
+[data-theme="luminus"] .sg:hover,
+[data-theme="luminus"] .exp-item:hover,
+[data-theme="luminus"] .project-card:hover,
+[data-theme="luminus"] .cbox:hover {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  transform: none;
+}
+
+/* ── 3. CURSOR VISIBILITY ── */
+[data-theme="luminus"] .cursor-dot {
+  width: 16px !important;
+  height: 16px !important;
+  background: #000000 !important;
+  border: none !important;
+  opacity: 1 !important;
+}
+[data-theme="luminus"] .cursor-ring {
+  display: none;
+}
+[data-theme="luminus"] .cursor-trail {
+  display: none;
+}
+
+/* ── REMOVE EXPERIENCE TIMELINE ── */
+[data-theme="luminus"] .exp-line,
+[data-theme="luminus"] .exp-dot,
+[data-theme="luminus"] .exp-wrap::before,
+[data-theme="luminus"] .exp-item::before {
+  display: none;
+  background: none;
+}
+
+/* ── 4. NEOFETCH TEXT READABILITY ── */
+[data-theme="luminus"] .nk,
+[data-theme="luminus"] .nc {
+  color: #4a4a4a;
+}
+[data-theme="luminus"] .nv,
+[data-theme="luminus"] .nu,
+[data-theme="luminus"] .nh,
+[data-theme="luminus"] .ndiv,
+[data-theme="luminus"] .nf-lbl {
+  color: #1a1a1a;
+  font-weight: 500;
+}
+

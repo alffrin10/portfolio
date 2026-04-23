@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+@import './themes.css';
+@import './animations.css';
+@import './components.css';
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'JetBrains Mono', monospace;
+  overflow-x: hidden;
+  min-height: 100vh;
+  transition: background .4s, color .4s;
+}
+
+/* Desktop-only custom cursor — added via JS class */
+body.has-cursor { cursor: none; }
+body.has-cursor a, body.has-cursor button { cursor: none; }
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+::selection { background: rgba(255,255,255,.15); color: var(--text); }
+
+/* ── Global Accessibility ── */
+:focus-visible {
+  outline: 1px solid var(--mauve);
+  outline-offset: 4px;
+}
+
+/* ── Scroll progress bar ── */
+.scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  z-index: 10000;
+  background: linear-gradient(90deg, var(--mauve), var(--sap));
+  box-shadow: 0 0 8px var(--glow);
+  transition: width .05s linear;
+}
+
+/* ── Custom cursor (desktop only) ── */
+.cursor-dot {
+  position: fixed;
+  width: 8px; height: 8px;
+  background: var(--mauve);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9997;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 14px var(--glow), 0 0 28px rgba(255,255,255,.1);
+  transition: background .4s;
+}
+.cursor-ring {
+  position: fixed;
+  width: 30px; height: 30px;
+  border: 1.5px solid rgba(255,255,255,.28);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9996;
+  transform: translate(-50%, -50%);
+}
+
+/* ── Intro overlay — styles live in upgrades.css (cinematic CSS/JS version) ── */
+
+/* ── Warp flash overlay ── */
+.warp-flash {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  background: #fff;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .08s;
+}
+
+/* ── Background overlays ── */
+.bg-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.scan-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,.012) 2px, rgba(0,0,0,.012) 4px);
+}
+.vignette-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(ellipse 78% 78% at 50% 50%, transparent 38%, rgba(0,0,0,.72) 100%);
+}
+
+/* ── Main layout ── */
+.site-root {
+  opacity: 1;
+  transition: opacity .4s ease;
+}
+.wrap {
+  position: relative;
+  z-index: 2;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 82px 28px 64px;
+}
+section {
+  margin-bottom: 64px;
+  scroll-margin-top: 82px;
+}
+
+/* ── Skip to content (a11y) ── */
+.skip-link {
+  position: absolute;
+  top: -100px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--mauve);
+  color: var(--crust);
+  padding: 10px 20px;
+  border-radius: 0 0 8px 8px;
+  font-size: 12px;
+  z-index: 100000;
+  transition: top .3s;
+}
+.skip-link:focus { top: 0; }
+
+/* ── Noscript ── */
+noscript {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-size: 16px;
+  text-align: center;
+}
